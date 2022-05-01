@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondFragment">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/pomstar"
+            android:layout_width="@dimen/lbl_width1_1"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:text="@string/lab_star"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pomend"
+            android:layout_width="@dimen/lbl_width1_1"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/pomstar"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:text="@string/lab_end"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pomtask"
+            android:layout_width="@dimen/lbl_width1_2"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/pomend"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:text="@string/lab_task"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pomtotal"
+            android:layout_width="@dimen/lbl_width1_3"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/pomtask"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/lab_total"
+            android:textColor="@color/purple_500" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_main">
+
+        <ListView
+            android:id="@+id/lvTask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            tools:listitem="@layout/custom_row"/>
+    </LinearLayout>
+</FrameLayout>
+</android.support.constraint.ConstraintLayout>

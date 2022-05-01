@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.pomy.MainActivity"
+    >
+    <!--
+        <item
+            android:id="@+id/list_item"
+            android:orderInCategory="100"
+            android:title="@string/action_list"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/ic_list"
+            android:onClick="onListItemClick"
+            />
+            android:onClick="onListItemClick"-->
+
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/action_settings">
+        <item android:id="@+id/pause_short"
+            android:title="@string/pause_short" />
+        <item android:id="@+id/pause_long"
+            android:title="@string/pause_long" />
+    </group>
+</menu>

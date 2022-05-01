@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@android:id/background">
+
+        <shape android:shape="ring"
+            android:useLevel="false"
+            android:thicknessRatio="@dimen/line_thickness_circularbar"
+            >
+            <solid android:color="@android:color/darker_gray"/>
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <rotate android:fromDegrees="270"
+            android:toDegrees="270">
+            <shape android:shape="ring"
+                android:thicknessRatio="@dimen/line_thickness_circularbar">
+
+                <solid android:color="@color/colorAccent"/>
+
+            </shape>
+        </rotate>
+    </item>
+    <!--<item android:id="@android:id/progress">
+        <rotate android:fromDegrees="270"
+            android:toDegrees="270">
+
+            <shape android:shape="ring"
+                android:thicknessRatio="90">
+
+                <gradient android:type="sweep"
+                    android:startColor="@color/colorAccent"
+                    android:centerColor="@color/colorPrimary"
+                    android:endColor="@color/colorPrimaryDark" />
+
+            </shape>
+        </rotate>
+    </item>-->
+    <item android:id="@android:id/secondaryProgress">
+        <rotate android:toDegrees="270"
+            android:fromDegrees="270">
+            <shape android:thicknessRatio="@dimen/line_thickness_circularbar"
+                android:shape="ring">
+                <solid android:color="@color/colorPrimaryDark"/>
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

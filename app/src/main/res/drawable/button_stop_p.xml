@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+
+        <shape android:shape="oval">
+            <solid android:color="@color/buttons_p"/>
+        </shape>
+    </item>
+
+    <item >
+        <vector
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="@color/buttons_i"
+                android:pathData="M6,6h12v12H6z"/>
+        </vector>
+    </item>
+</layer-list>

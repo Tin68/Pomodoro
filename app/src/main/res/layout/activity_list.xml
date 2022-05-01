@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListActivity">
+
+    <RelativeLayout
+        android:id="@+id/list_container"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/pomstar"
+            android:layout_width="@dimen/lbl_width1_1"
+            android:layout_height="@dimen/file_height"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:text="@string/lab_star"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pomend"
+            android:layout_width="@dimen/lbl_width1_1"
+            android:layout_height="@dimen/file_height"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/pomstar"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:text="@string/lab_end"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pomtask"
+            android:layout_width="@dimen/lbl_width1_2"
+            android:layout_height="@dimen/file_height"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/pomend"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:text="@string/lab_task"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pomtotal"
+            android:layout_width="@dimen/lbl_width1_3"
+            android:layout_height="@dimen/file_height"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/pomtask"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/lab_total"
+            android:textColor="@color/purple_500" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_container">
+
+        <ListView
+            android:id="@+id/lvTask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            tools:listitem="@layout/custom_row" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

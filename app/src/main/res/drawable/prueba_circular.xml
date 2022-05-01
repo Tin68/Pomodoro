@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/rayas">
+        <shape android:shape="oval">
+            <size
+                android:width="50dp"
+                android:height="50dp"
+                 />
+
+            <stroke
+                android:width="1dp"
+                android:color="@color/colorAccent"
+                android:dashWidth="1dp"
+                android:dashGap="1dp" />
+        </shape>
+    </item>
+    <!--
+    <item android:id="@android:id/background">
+
+        <shape android:shape="ring"
+            android:useLevel="false"
+            android:innerRadius="48dp"
+            android:thicknessRatio="@dimen/line_thickness_circularbar"
+            >
+            <solid android:color="@android:color/darker_gray"/>
+        </shape>
+    </item>-->
+    <item android:id="@android:id/progress">
+        <rotate android:fromDegrees="270"
+            android:toDegrees="270">
+            <shape android:shape="ring"
+                android:innerRadius="48dp"
+                android:thicknessRatio="@dimen/line_thickness_circularbar">
+                <solid android:color="@color/colorAccent"/>
+            </shape>
+        </rotate>
+    </item>
+    <!--<item android:id="@android:id/progress">
+        <rotate android:fromDegrees="270"
+            android:toDegrees="270">
+
+            <shape android:shape="ring"
+                android:thicknessRatio="90">
+
+                <gradient android:type="sweep"
+                    android:startColor="@color/colorAccent"
+                    android:centerColor="@color/colorPrimary"
+                    android:endColor="@color/colorPrimaryDark" />
+
+            </shape>
+        </rotate>
+    </item>-->
+    <item android:id="@android:id/secondaryProgress">
+        <rotate android:toDegrees="270"
+            android:fromDegrees="270">
+            <shape android:thicknessRatio="@dimen/line_thickness_circularbar"
+                android:innerRadius="48dp"
+                android:shape="ring">
+                <solid android:color="@color/colorPrimaryDark"/>
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

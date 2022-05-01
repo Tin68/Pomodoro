@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_screen"
+    tools:context=".FirstFragment">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textImputLayout_task"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:textColorHint="@color/purple_500"
+        android:minHeight="45dp"
+        android:theme="@style/TextLabel">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/taskEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textColor="@color/purple_500"
+            android:hint="@string/task"
+            tools:text="Tarea"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textImputLayout_task" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:stretchColumns="1"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space"
+        tools:ignore="MissingConstraints,NotSibling">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_play"
+                android:enabled="false"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="@dimen/btn_size"
+                android:layout_column="0"
+                android:contentDescription='@string/button_play'
+                android:onClick="btnPlayClick"
+                android:background="@drawable/button_design_play"
+                tools:ignore="ButtonStyle" />
+            <TextView
+                android:id="@+id/btn_hist"
+                android:enabled="true"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="50dp"
+                android:layout_column="1"
+                android:contentDescription='@string/button_hist'
+                android:text="@string/Hist"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/button_design_text"
+                android:onClick="btnHistClick"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"/>
+
+            <Button
+                android:id="@+id/btn_stop"
+                android:enabled="false"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="@dimen/btn_size"
+                android:layout_column="2"
+                android:contentDescription='@string/button_stop'
+                android:onClick="btnStopClick"
+                android:background="@drawable/button_design_stop"
+                tools:ignore="ButtonStyle" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                tools:ignore="UselessParent">
+
+                <ProgressBar
+                    android:id="@+id/pb_circular_determinative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:indeterminateOnly="false"
+                    android:minWidth="@dimen/countdown_size"
+                    android:minHeight="@dimen/countdown_size"
+                    android:progressDrawable="@drawable/pb_circular_determinative"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:progress="50"
+                    tools:secondaryProgress="70" />
+
+                <TextView
+                    android:id="@+id/textview_countdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center"
+                    android:minWidth="@dimen/countdown_size"
+                    android:minHeight="@dimen/countdown_size"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="#FF0000"
+                    android:textSize="55sp"
+                    tools:ignore="TextContrastCheck"
+                    tools:text="25:00" />
+            </RelativeLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_pause"
+                android:enabled="false"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="@dimen/btn_size"
+                android:layout_column="0"
+                android:contentDescription='@string/button_pause'
+                android:onClick="btnPauseClick"
+                android:background="@drawable/button_design_pause"
+                tools:ignore="ButtonStyle" />
+            <Button
+                android:id="@+id/btn_next"
+                android:enabled="false"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="@dimen/btn_size"
+                android:layout_column="2"
+                android:contentDescription='@string/button_next'
+                android:onClick="btnNextClick"
+                android:background="@drawable/button_design_next"
+                tools:ignore="ButtonStyle" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_main"
+        android:layout_width="396dp"
+        android:layout_height="@dimen/file_height"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="@dimen/lbl_width1_1"
+            android:layout_height="@dimen/file_height"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/lab_star"
+            android:background="@drawable/edit_text_background"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="@dimen/lbl_width1_1"
+            android:layout_height="@dimen/file_height"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/lab_end"
+            android:background="@drawable/edit_text_background"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="@dimen/lbl_width1_2"
+            android:layout_height="@dimen/file_height"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/lab_task"
+            android:background="@drawable/edit_text_background"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="@dimen/lbl_width1_3"
+            android:layout_height="@dimen/file_height"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/lab_total"
+            android:maxLines="2"
+            android:background="@drawable/edit_text_background"
+            android:textColor="@color/purple_500" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_file1"
+        android:layout_width="@dimen/file_width"
+        android:layout_height="@dimen/file_height"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_main"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/pom1star"
+            android:layout_width="@dimen/lbl_width1_1"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text=""
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pom1end"
+            android:layout_width="@dimen/lbl_width1_1"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text=""
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pom1task"
+            android:layout_width="@dimen/lbl_width1_2"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:text=""
+            android:maxLines="2"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pom1total"
+            android:layout_width="@dimen/lbl_width1_3"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:text=""
+            android:maxLines="2"
+            android:textColor="@color/purple_500" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearlayout_file2"
+        android:layout_width="396dp"
+        android:layout_height="@dimen/file_height"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_file1"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/pom2star"
+            android:layout_width="@dimen/lbl_width1_1"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text=""
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pom2end"
+            android:layout_width="@dimen/lbl_width1_1"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text=""
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pom2task"
+            android:layout_width="@dimen/lbl_width1_2"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/pom2total"
+            android:layout_width="@dimen/lbl_width1_3"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/purple_500" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
