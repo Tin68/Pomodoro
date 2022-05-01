@@ -11,7 +11,7 @@ Como no se si seré capaz de subir todo al GitHub, o si una vez hecho, hacer el 
 
 La App funciona tanto en primer plano como minimizada
 
-*EN PRIMER PLANO
+*EN PRIMER PLANO (Todo correcto)
 
 En la primera imagen (1) se puede ver la estructura:
 
@@ -49,7 +49,7 @@ Entre tarea - descanso suena unas campanillas :bell: y he puesto un Toast (segur
 ![Image text](https://github.com/Tin68/Pomodoro/blob/main/ImgReadme/Pomy_09.png)
 
 
-*SEGUNDO PLANO
+*SEGUNDO PLANO (Aquí es donde tengo los fallos)
 
 ![Image text](https://github.com/Tin68/Pomodoro/blob/main/ImgReadme/Pomy_10.png)
 
